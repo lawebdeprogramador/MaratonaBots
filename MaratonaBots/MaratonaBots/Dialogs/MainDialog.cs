@@ -19,21 +19,21 @@ namespace MaratonaBots.Dialogs
         private const string NOT_FOUND = "Nao achei a resposta";
         private const string REI = "Rei x -";
         [NonSerialized]
-        private readonly QnaMakerService _qnaMakerService;
+        private readonly QnaMakerClient _qnaMakerClient;
         
-        private QnaMakerService QnaMakerService
+        private QnaMakerClient QnaMakerClient
         {
             get
             {
-                if (_qnaMakerService != null)
-                    return _qnaMakerService;
-                return new QnaMakerService();
+                if (_qnaMakerClient != null)
+                    return _qnaMakerClient;
+                return new QnaMakerClient();
             }
         }
-        public MainDialog(ILuisService model, QnaMakerService qnaMakerService)
+        public MainDialog(ILuisService model, QnaMakerClient qnaMakerClient)
             : base(model)
         {
-            _qnaMakerService = qnaMakerService ?? throw new ArgumentNullException(nameof(qnaMakerService));
+            _qnaMakerClient = qnaMakerClient ?? throw new ArgumentNullException(nameof(qnaMakerClient));
         }
 
         [LuisIntent("Saudacao")]
@@ -48,7 +48,7 @@ namespace MaratonaBots.Dialogs
             string query = result.Query;
             Debug.WriteLine($"query={query}");
 
-            QnaMakerResultsRoot qnaMakerResultsRoot = await QnaMakerService.FindAnswersAsync(query);
+            QnaMakerResultsRoot qnaMakerResultsRoot = await QnaMakerClient.FindAnswersAsync(query);
 
             string summaryText = NOT_FOUND;
             if (qnaMakerResultsRoot.Answers.Count > 0)
@@ -69,7 +69,7 @@ namespace MaratonaBots.Dialogs
             string query = result.Query;
             Debug.WriteLine($"query={query}");
 
-            QnaMakerResultsRoot qnaMakerResultsRoot = await QnaMakerService.FindAnswersAsync(query);
+            QnaMakerResultsRoot qnaMakerResultsRoot = await QnaMakerClient.FindAnswersAsync(query);
 
             string summaryText = NOT_FOUND;
             if (qnaMakerResultsRoot.Answers.Count > 0)

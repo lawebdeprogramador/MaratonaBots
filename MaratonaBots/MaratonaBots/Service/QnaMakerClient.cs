@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MaratonaBots.Service
 {
-    internal class QnaMakerService
+    internal class QnaMakerClient
     {
         public async Task<QnaMakerResultsRoot> FindAnswersAsync(string question)
         {

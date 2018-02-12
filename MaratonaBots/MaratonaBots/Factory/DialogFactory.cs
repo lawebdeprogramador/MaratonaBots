@@ -13,7 +13,7 @@ namespace MaratonaBots.Factory
             return new MainDialog(new LuisService(new LuisModelAttribute(
                     modelID: ConfigurationManager.AppSettings["LuisModelId"],
                     subscriptionKey: ConfigurationManager.AppSettings["LuisSubscriptionKey"]
-                )), new QnaMakerService());
+                )), new QnaMakerClient());
         }
     }
 }

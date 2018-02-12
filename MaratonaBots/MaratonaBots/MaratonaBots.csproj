@@ -136,7 +136,7 @@
     <Compile Include="Model\QnaMakerResult.cs" />
     <Compile Include="Model\QnaMakerResultsRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\QnaMakerService.cs" />
+    <Compile Include="Service\QnaMakerClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
