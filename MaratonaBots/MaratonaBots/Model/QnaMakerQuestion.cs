@@ -1,7 +1,6 @@
 ﻿using System;
-using Newtonsoft.Json;
 
-namespace MaratonaBots.Models.Search
+namespace MaratonaBots.Model
 {
     public class QnaMakerQuestion
     {
@@ -15,7 +14,7 @@ namespace MaratonaBots.Models.Search
             Question = question ?? throw new ArgumentNullException(nameof(question));
         }
 
-        [JsonProperty("question")]
+        
         public string Question { get; set; }
     }
 }

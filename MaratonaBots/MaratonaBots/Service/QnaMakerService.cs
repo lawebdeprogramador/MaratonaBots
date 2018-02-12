@@ -1,11 +1,12 @@
-﻿using System.Configuration;
+﻿using MaratonaBots.Model;
+using System;
+using System.Configuration;
 using System.Net.Http;
 using System.Threading.Tasks;
-using MaratonaBots.Models.Search;
 
-namespace MaratonaBots.Services
+namespace MaratonaBots.Service
 {
-    internal sealed class QnaMakerService : ISearchService
+    internal class QnaMakerService
     {
         public async Task<QnaMakerResultsRoot> FindAnswersAsync(string question)
         {

@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using MaratonaBots.Factory;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 
@@ -18,7 +19,7 @@ namespace MaratonaBots
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.MainDialog());
+                await Conversation.SendAsync(activity, () => DialogFactory.CreateDialog());
             }
             else
             {
