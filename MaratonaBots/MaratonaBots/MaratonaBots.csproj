@@ -132,11 +132,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\FaceValidationDTO.cs" />
+    <Compile Include="Model\FaceValidationResult.cs" />
     <Compile Include="Model\QnaMakerQuestion.cs" />
     <Compile Include="Model\QnaMakerResult.cs" />
     <Compile Include="Model\QnaMakerResultsRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\QnaMakerClient.cs" />
+    <Compile Include="Service\VisionComputionClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
